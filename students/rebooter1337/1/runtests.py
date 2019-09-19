@@ -35,10 +35,10 @@ def find_tests(tests):  # noqa: WPS210
         to_import.append(importlib.import_module(method))
     import_list = list(set(to_import))
     for fu in import_list:
-        methodes = [pm[0] for pm in inspect.getmembers(fu, inspect.isfunction)]
-        for methode in methodes:
-            if 'test_' in methode:
-                my_tests.append(methode)
+        methods = [pm[0] for pm in inspect.getmembers(fu, inspect.isfunction)]
+        for method in methods:
+            if 'test_' in method:
+                my_tests.append(method)
     return to_import, my_tests
 
 
