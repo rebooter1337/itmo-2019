@@ -31,8 +31,8 @@ def find_tests(tests):  # noqa: WPS210
     my_tests = []
 
     for module in tests:
-        method = inspect.getmodulename(module)
-        to_import.append(importlib.import_module(method))
+        main_method = inspect.getmodulename(module)
+        to_import.append(importlib.import_module(main_method))
     import_list = list(set(to_import))
     for fu in import_list:
         methods = [pm[0] for pm in inspect.getmembers(fu, inspect.isfunction)]
