@@ -5,25 +5,25 @@ import os
 from datetime import datetime
 
 
-def ls(dir=None):
+def ls(directory=None):
     """Ls."""
-    dir = os.getcwd() if dir is None else dir
-    objects = []
-    for folder_name in os.listdir(dir):
+    directory = os.getcwd() if directory is None else directory
+    ls_staff = []
+    for folder_name in os.listdir(directory):
         if '.' not in folder_name:
-            objects.append(folder_name)
-    for file_name in os.listdir(dir):
+            ls_staff.append(folder_name)
+    for file_name in os.listdir(directory):
         if '.' in file_name:
-            objects.append(file_name)
-    return objects
+            ls_staff.append(file_name)
+    return ls_staff
 
 
 def mk(file_name):
     """Mk."""
     if os.path.isfile(file_name):
         return 'Error'
-    try:
-        open(file_name, 'w+').close
+    try:  # noqa: WPS229
+        current_file = open(file_name, 'w+').close
         return 'Success'
     except OSError:
         return 'Error'
@@ -45,21 +45,21 @@ def contains(file_name):
     return False
 
 
-def since(time, dir=None):
+def since(time, directory=None):  # noqa C901
     """Since."""
     files = []
-    if dir is None:
-        dir = os.getcwd()
-    try:
+    if directory is None:
+        directory = os.getcwd()
+    try:  # noqa: WPS229
         date = datetime.strptime(time, '%Y-%m-%d_%H:%M:%S')
-        for file_name in os.listdir(dir):
-            if dir == os.getcwd():
+        for file_name in os.listdir(directory):
+            if directory == os.getcwd():
                 file_datetime = datetime.fromtimestamp(
                     os.path.getctime(file_name),
                 )
             else:
                 file_datetime = datetime.fromtimestamp(
-                    os.path.getctime(dir / file_name),
+                    os.path.getctime(directory / file_name),
                 )
             if file_datetime > date:
                 files.append(file_name)
@@ -68,7 +68,7 @@ def since(time, dir=None):
         return 'Use mask: y-m-d-h:m:s'
 
 
-def main():
+def main():  # noqa: WPS210
     """Main."""
     commands = {
         'ls': ls,
@@ -90,9 +90,9 @@ def main():
         if len(argument.argument) > 1:
             parameter = argument.argument[1]
         programm = commands[command]
-        print(programm(parameter))
+        print(programm(parameter))  # noqa: T001
     else:
-        print('There is no such command')
+        print('There is no such command')  # noqa: T001
 
 if __name__ == '__main__':
     main()
