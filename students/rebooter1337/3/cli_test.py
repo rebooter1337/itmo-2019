@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import subprocess
+import subprocess  # noqa: S404
 from cli import contains, ls  # noqa I001
 from cli import mk, rm, since  # noqa I001
 
@@ -38,4 +38,4 @@ def test_integration(integration_fixture):
     command, parameter = integration_fixture
     format_str = 'python students/rebooter1337/3/cli.py {0} {1}'
     command_str = format_str .format(command, parameter)
-    assert subprocess.call(command_str , shell=True) == 0
+    assert subprocess.call(command_str, shell=True) == 0  # noqa: S602
