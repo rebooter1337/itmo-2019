@@ -23,7 +23,7 @@ def mk(file_name):
     if os.path.isfile(file_name):
         return 'Error'
     try:  # noqa: WPS229
-        current_file = open(file_name, 'w+').close
+        open(file_name, 'w+').close  # noqa WPS515
         return 'Success'
     except OSError:
         return 'Error'
@@ -93,6 +93,7 @@ def main():  # noqa: WPS210
         print(programm(parameter))  # noqa: T001
     else:
         print('There is no such command')  # noqa: T001
+
 
 if __name__ == '__main__':
     main()
