@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import os
-import pytest
+"""Conftest file."""
+import pytest  # noqa I001
+import os  # noqa I001
 
 
 DIR = 'directory'
