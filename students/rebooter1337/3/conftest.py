@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-"""Conftest file."""
 import pytest  # noqa I001
+
 import os  # noqa I001
 
 
