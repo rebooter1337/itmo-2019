@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import os 
+
 import pytest  # noqa I001
-import os  # noqa I001, I003
-  # noqa I004
+
 
 DIR = 'directory'
 TEST_FILE = 'test.py'
@@ -106,6 +107,7 @@ def since_fixture(tmp_path, request):
     ('ls', ''),
     ('mk', TEST_FILE),
     ('contains', TEST_FILE),
+    ('since', DATE_TIME),
     ('rm', TEST_FILE),
 ])
 def integration_fixture(request):
