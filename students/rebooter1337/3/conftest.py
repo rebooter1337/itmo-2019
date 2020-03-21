@@ -7,7 +7,8 @@ import os
 DIR = 'directory'
 TEST_FILE = 'test.py'
 DATE_TIME = '2020-01-14_04:20:00'
-
+DOT = '.'
+ERROR = 'Error'
 
 @pytest.fixture(params=[
     ('empty', [], []),
@@ -22,15 +23,15 @@ def ls_fixture(tmp_path, request):
     path.mkdir()
     for name in request.param[1]:
         folder_item = path / name
-        folder_item.join() if '.' in request.param[1] else folder_item.mkdir()
+        folder_item.join() if DOT in request.param[1] else folder_item.mkdir()
     yield (path, request.param[2])
 
 
 @pytest.fixture(params=[
     (TEST_FILE, 'Success'),
     ('блабла.py', 'Success'),
-    ('conftest1.py', 'Error'),
-    ('&unable/.py', 'Error'),
+    ('conftest1.py', ERROR),
+    ('&unable/.py', ERROR),
 ])
 def mk_fixture(request):
     """Mk fixture."""
@@ -44,13 +45,13 @@ def mk_fixture(request):
 
 @pytest.fixture(params=[
     (TEST_FILE, 'Success'),
-    (DIR, 'Error'),
-    ('&unable/.py', 'Error'),
+    (DIR, ERROR),
+    ('&unable/.py', ERROR),
 ])
 def rm_fixture(tmp_path, request):
     """Rm fixture."""
     rule = request.param[0]
-    if '.' in rule:
+    if DOT in rule:
         try:
             open(rule, 'w+').close()  # noqa WPS515
         except FileNotFoundError:
@@ -69,12 +70,11 @@ def rm_fixture(tmp_path, request):
 def contains_fixture(tmp_path, request):
     """Contains fixture."""
     rule = request.param[0]
-    if '.' not in rule:
+    if DOT not in rule:
         new_item = tmp_path / rule
         new_item.mkdir()
     elif rule == 'conftest2.py':
-        my_file = open(rule, 'w+')
-        my_file.close()
+        open(rule, 'w+').close()  # noqa WPS515
     yield request.param
     if os.path.isfile(rule):
         os.remove(rule)
@@ -94,7 +94,7 @@ def since_fixture(tmp_path, request):
     path.mkdir()
     for name in request.param[2]:
         folder_item = path / name
-        if '.' in request.param[2]:
+        if DOT in request.param[2]:
             folder_item.join()
         else:
             folder_item.mkdir()
