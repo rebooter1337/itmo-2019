@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import pytest  # noqa I001
-import os  # noqa I001
-
+import os  # noqa I001, I003
+  # noqa I004
 
 DIR = 'directory'
 TEST_FILE = 'test.py'
