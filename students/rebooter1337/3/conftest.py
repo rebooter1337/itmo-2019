@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import pytest
 import os
+import pytest
 
 
 DIR = 'directory'
@@ -9,6 +9,7 @@ TEST_FILE = 'test.py'
 DATE_TIME = '2020-01-14_04:20:00'
 DOT = '.'
 ERROR = 'Error'
+
 
 @pytest.fixture(params=[
     ('empty', [], []),
@@ -23,7 +24,7 @@ def ls_fixture(tmp_path, request):
     path.mkdir()
     for name in request.param[1]:
         folder_item = path / name
-        folder_item.join() if DOT in request.param[1] else folder_item.mkdir()
+        folder_item.join() if DOT in request.param[1] else folder_item.mkdir()  # noqa WPS428
     yield (path, request.param[2])
 
 
