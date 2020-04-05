@@ -15,10 +15,7 @@ from cats_direct_rebooter1337 import (
 
 
 class CatProcessor(object):
-    """  # noqa: D204, D205
-    Knows exactly how to process cats.
-    Only uses composition.
-    """
+    """Cats processor."""
     def __init__(
         self,
         fetch_text,
