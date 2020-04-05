@@ -23,7 +23,7 @@ class TestCatsDirect(unittest.TestCase):   # noqa: WPS230
     def setUp(self):
         """Set up test case."""
         self.image_formats = ['jpg', 'jpeg', 'gif', 'png']
-        self.image_name = ['test_cat_image', 'jpg']
+        self.image_name = ['students/rebooter1337/4/test_cat_image', 'jpg']
         self.http_error_text = 'HTTP fail'
         self.args = ['--count', '4']
         self.temp = 'temp'
