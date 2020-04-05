@@ -16,13 +16,11 @@ from cats_direct_rebooter1337 import (
 
 class CatProcessor(object):
     """
-    
     Knows exactly how to process cats.
     
     Only uses composition.
-    
     """
-
+    
     def __init__(
         self,
         fetch_text,
