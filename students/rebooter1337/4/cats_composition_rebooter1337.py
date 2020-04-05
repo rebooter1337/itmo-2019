@@ -15,7 +15,7 @@ from cats_direct_rebooter1337 import (
 
 
 class CatProcessor(object):
-    """Cats processor."""
+    """Cats processor."""  # noqa: D204
     def __init__(
         self,
         fetch_text,
