@@ -39,12 +39,12 @@ class TestCatsComposition(unittest.TestCase):
 
         fact_path = '{0}/cat_{1}_fact.txt'.format(self.temp, self.index)
         if os.path.exists(fact_path):
-            os.remove(fact_path) 
+            os.remove(fact_path)
 
         main(
             self.index,
             process_cat=cat_processor,
-            show_information=print,
+            show_information=print,  # noqa: T002
         )
 
         assert os.path.exists(fact_path)
@@ -52,7 +52,7 @@ class TestCatsComposition(unittest.TestCase):
     def test_integration(self):
         """Integration test."""
         str_command = self.str_format.format(self.integration_arg)
-        subprocess_res = subprocess.call(str_command, shell=True)
+        subprocess_res = subprocess.call(str_command, shell=True)  # noqa: S602
         assert subprocess_res == 0
 
 
