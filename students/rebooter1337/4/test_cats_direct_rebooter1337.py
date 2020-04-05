@@ -16,7 +16,7 @@ from cats_direct_rebooter1337 import (
 )
 
 
-class TestCatsDirect(unittest.TestCase):
+class TestCatsDirect(unittest.TestCase):   # noqa: WPS230
     """Unittest class for cats_direct_rpa."""
 
     def setUp(self):
@@ -91,7 +91,7 @@ class TestCatsDirect(unittest.TestCase):
     def test_integration(self):
         """Integration test."""
         str_command = self.str_format.format(self.integration_arg)
-        subprocess_res = subprocess.call(str_command, shell=True)
+        subprocess_res = subprocess.call(str_command, shell=True)  # noqa: S602
         assert subprocess_res == 0
 
 
