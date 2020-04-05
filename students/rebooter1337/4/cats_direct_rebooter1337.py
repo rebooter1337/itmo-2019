@@ -21,6 +21,7 @@ def create_parser() -> argparse.ArgumentParser:
 
 def fetch_cat_fact(mock: bool = False) -> str:
     """Fetches cat's fact.
+    
     >>> fetch_cat_fact(mock=True)
     'mocked'
     """
