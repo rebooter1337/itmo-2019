@@ -30,7 +30,7 @@ def ls_fixture(tmp_path, request):
 
 @pytest.fixture(params=[
     (TEST_FILE, 'Success'),
-    ('блабла.py', ERROR),
+    ('блабла.py', 'Success'),
     ('conftest1.py', ERROR),
     ('&unable/.py', ERROR),
 ])
