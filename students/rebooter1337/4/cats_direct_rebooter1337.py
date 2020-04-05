@@ -20,11 +20,8 @@ def create_parser() -> argparse.ArgumentParser:
 
 
 def fetch_cat_fact(mock: bool = False) -> str:
-    """Fetches cat's fact.
+    """Fetches cat's fact."""
     
-    >>> fetch_cat_fact(mock=True)
-    'mocked'
-    """
     if mock:
         return 'mocked'
     response = requests.get('https://cat-fact.herokuapp.com/facts/random')
