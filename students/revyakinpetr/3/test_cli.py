@@ -35,7 +35,7 @@ def test_rm(rm_fixture):
 def test_contains(contains_fixture):
     """Testing contains command."""
     filename, status = contains_fixture
-    assert contains(filename) == ['code: 0']
+    assert contains(filename) == status
 
 
 def test_since(since_fixture):
