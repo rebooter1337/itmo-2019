@@ -34,7 +34,7 @@ class TestCatsDirect(unittest.TestCase):   # noqa: WPS230
             'fact': 'test fact',
             'image_path': '{0}.{1}'.format(*self.image_name),
         }
-        self.str_format = 'python students/rebooter1337/4/cats_composition_rebooter1337.py {0}'  # noqa: E800, E501
+        self.str_format = 'python students/rebooter1337/4/cats_direct_rebooter1337.py {0}'  # noqa: E800, E501
         self.integration_arg = '--count=2'
 
     def tearDown(self):
