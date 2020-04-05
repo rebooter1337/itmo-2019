@@ -22,7 +22,7 @@ class TestCatsComposition(unittest.TestCase):
         self.temp = 'temp'
         if not os.path.exists(self.temp):
             os.mkdir(self.temp)
-        self.str_format = 'python cats_composition_rebooter1337.py {0}'
+        self.str_format = 'python students/rebooter1337/4/cats_composition_rebooter1337.py {0}'  # noqa: E800, E501
         self.integration_arg = '--count=2'
 
     def tearDown(self):
