@@ -29,19 +29,20 @@ def ls_fixture(tmp_path, request):
 
 
 @pytest.fixture(params=[
-    (TEST_FILE, 'Success'),
-    ('блабла.py', 'Success'),
-    ('conftest1.py', ERROR),
-    ('&unable/.py', ERROR),
+    (TEST_FILE, True),
+    ('имя.py', True),
+    ('conftest1.py', False),
+    ('unable/.py', False),
 ])
 def mk_fixture(request):
-    """Mk fixture."""
-    rule = request.param[0]
-    if rule == 'conftest1.py':
-        open(rule, 'w+').close()  # noqa WPS515
+    """Fixture for mk command."""
+    param0 = request.param[0]
+    if param0 == 'conftest1.py':
+        my_file = open(param0, 'w+')  # noqa WPS515
+        my_file.close()
     yield request.param
-    if os.path.isfile(rule):
-        os.remove(rule)
+    if os.path.isfile(param0):
+        os.remove(param0)
 
 
 @pytest.fixture(params=[
