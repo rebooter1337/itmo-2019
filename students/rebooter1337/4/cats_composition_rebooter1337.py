@@ -16,7 +16,6 @@ from cats_direct_rebooter1337 import (
 
 class CatProcessor(object):
     """Cats processor."""
-    
     def __init__(
         self,
         fetch_text,
