@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# type: ignore  # noqa E800
 
 import os
 import shutil
