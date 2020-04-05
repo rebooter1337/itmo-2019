@@ -12,7 +12,7 @@ def test_ls(ls_fixture):
 
 def test_mk(mk_fixture):
     """Mk tests."""
-    assert mk(mk_fixture[0]) == mk_fixture[0]
+    assert mk(mk_fixture[0]) == mk_fixture[1]
 
 
 def test_rm(rm_fixture):
