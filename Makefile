@@ -12,6 +12,7 @@ unit:
 package:
 	poetry check
 	poetry run pip check
+	
 
 .PHONY: test
 test: lint unit package
