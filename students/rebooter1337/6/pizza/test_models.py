@@ -22,7 +22,9 @@ class IngredientTest(TestCase):
         )  # noqa: WPS432
         royal.ingredients.set([1])
 
-        margaret = Pizza.objects.create(title='Margaret', price=90)  # noqa: WPS432, E501
+        margaret = Pizza.objects.create(
+            title='Margaret', price=90,  # noqa: WPS432
+        )
         margaret.ingredients.set([2])
 
     def test_ingredient_title(self):
