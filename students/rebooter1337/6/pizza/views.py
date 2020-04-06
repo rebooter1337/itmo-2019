@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-from django.http import QueryDict  # noqa: F401, I001
 
+from django.http import QueryDict  # noqa: F401, I001
 import json  # noqa: F401, I001
 from django.http import JsonResponse  # noqa: I001, I003
 from rest_framework import viewsets
