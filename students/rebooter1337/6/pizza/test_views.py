@@ -75,7 +75,7 @@ class TestStatistics(TestCase):
             title='Garlic',
         )
         royal = Pizza.objects.create(
-            title='Royal common', price=200  # noqa: WPS432
+            title='Royal common', price=200,  # noqa: WPS432
         )
         royal.ingredients.set([1])
 
