@@ -6,6 +6,7 @@ jobs:
     - language: python
       python: 3.7
       before_install:
+        - export PYTHONPATH=$PYTHONPATH:$(pwd)
         - pip freeze | xargs pip uninstall -y
         - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
         - source "$HOME/.poetry/env"
