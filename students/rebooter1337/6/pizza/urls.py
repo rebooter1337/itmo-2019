@@ -3,12 +3,10 @@
 """Django URL Routing for yumpi application."""
 
 from django.contrib import admin
-from django.urls import path, include
-
+from django.urls import include, path
 from rest_framework import routers
 
-from pizza.views import IngredientViewSet, PizzaViewSet, OrderViewSet, get_statistics, post_order
-
+from pizza.views import IngredientViewSet, PizzaViewSet, OrderViewSet, get_statistics, post_order  # noqa: I001, E501
 
 router = routers.DefaultRouter()
 router.register('pizza', PizzaViewSet)
