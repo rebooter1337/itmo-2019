@@ -7,7 +7,7 @@ from ..models import Ingredient, Pizza  # noqa: WPS300
 
 class IngredientTest(TestCase):
     """Test module for Puppy model."""
-      # noqa: W293
+
     def setUp(self):
         """Setting up."""
         Ingredient.objects.create(
