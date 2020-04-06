@@ -11,13 +11,13 @@ class PostTest(TestCase):
     def setUp(self):
         """Setting up database for testing purpose."""
         Ingredient.objects.create(
-            title='Dough'
+            title='Dough',
         )
         Ingredient.objects.create(
-            title='Garlic'
+            title='Garlic',
         )
         royal = Pizza.objects.create(
-            title='Royal common', price=200  # noqa: WPS432
+            title='Royal common', price=200,  # noqa: WPS432
         )
         royal.ingredients.set([1])
 
@@ -42,25 +42,25 @@ class TestGetPizzas(TestCase):
     def setUp(self):
         """Setting up database for testing purpose."""
         Ingredient.objects.create(
-            title='Dough'
+            title='Dough',
         )
         Ingredient.objects.create(
-            title='Garlic'
+            title='Garlic',
         )
         royal = Pizza.objects.create(
-            title='Royal common', price=200  # noqa: WPS432
+            title='Royal common', price=200,  # noqa: WPS432
         )
         royal.ingredients.set([1])
 
         margaret = Pizza.objects.create(
-            title='Margaret', price=90  # noqa: WPS432
+            title='Margaret', price=90,  # noqa: WPS432
         )
         margaret.ingredients.set([2])
 
     def test_get(self):
         """Testing Views getting API Pizza."""
         response = self.client.get(path='/api/pizza/')
-        assert response.status_code == 200  #noqa: WPS432
+        assert response.status_code == 200  # noqa: WPS432
 
 
 class TestStatistics(TestCase):
@@ -69,13 +69,13 @@ class TestStatistics(TestCase):
     def setUp(self):
         """Setting up database for testing purpose."""
         Ingredient.objects.create(
-            title='Dough'
+            title='Dough',
         )
         Ingredient.objects.create(
-            title='Garlic'
+            title='Garlic',
         )
         royal = Pizza.objects.create(
-            title='Royal common', price=200  #noqa: WPS432
+            title='Royal common', price=200  # noqa: WPS432
         )
         royal.ingredients.set([1])
 
