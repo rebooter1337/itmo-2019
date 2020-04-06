@@ -2,11 +2,13 @@
 
 import datetime
 from django.http import QueryDict  # noqa: F401, I001
-import json  # noqa: F401
+
+import json  # noqa: F401, I001
 from django.http import JsonResponse  # noqa: I001, I003
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+
 from pizza.models import Ingredient, Order, Pizza
 from pizza.serializers import IngredientSerializer, OrderSerializer, PizzaSerializer  # noqa: I001, E501
 from pizza.mailing import send_mail_on_order  # noqa: F401, I001
