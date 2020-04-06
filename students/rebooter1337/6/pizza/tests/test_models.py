@@ -2,7 +2,7 @@
 
 from django.test import TestCase
 
-from ..models import Ingredient, Pizza  # noqa: WPS300
+from pizza.models import Ingredient, Pizza  # noqa: WPS300
 
 
 class IngredientTest(TestCase):
