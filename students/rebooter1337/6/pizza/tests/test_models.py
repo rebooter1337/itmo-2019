@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import django
-
 from django.test import TestCase
 
 from ..models import Ingredient, Pizza  # noqa: WPS300
