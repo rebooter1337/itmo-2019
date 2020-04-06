@@ -33,7 +33,7 @@ class PostTest(TestCase):
         }
 
         response = self.client.post(path='/api/order/', datas1=datas)
-        assert response.status_code == 200  # noqa: WPS432
+        assert response.status_code == 400  # noqa: WPS432
 
 
 class TestGetPizzas(TestCase):
