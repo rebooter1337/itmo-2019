@@ -67,9 +67,9 @@ class Order(models.Model):
         if working_hours >= 10 and working_hours < 22:  # noqa: WPS432, WPS333
             return number_of_pizzas * 10 + 40  # noqa: WPS432
         else:
-            return delivery_time = number_of_pizzas * 10 + 60
+            return number_of_pizzas * 10 + 60
 
     def __str__(self):
         """Returns string representation of Order."""
-        return 'Oder date {0}. Status: {1}. Pizas: {2}'.format(self.order_date,
+        return 'Oder date {0}. Status: {1}. Pizas: {2}'.format(self.order_date,  # noqa: E501
                                                                  self.status, self.pizzas.count())  # noqa: WPS317
