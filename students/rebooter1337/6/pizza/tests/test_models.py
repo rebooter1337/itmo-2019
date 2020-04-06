@@ -6,27 +6,27 @@ from ..models import Ingredient, Pizza  # noqa: WPS300
 
 
 class IngredientTest(TestCase):
-    """ Test module for Puppy model."""
+    """Test module for Puppy model."""
+    
     def setUp(self):
         """Setting up."""
         Ingredient.objects.create(
-            title='Dough'
+            title='Dough',
         )
         Ingredient.objects.create(
-            title='Garlic'
+            title='Garlic',
         )
 
         royal = Pizza.objects.create(
-            title='Royal common', price=200)  # noqa: WPS432
+            title='Royal common', price=200
+        )  # noqa: WPS432
         royal.ingredients.set([1])
 
-        margaret = Pizza.objects.create(title='Margaret', price=90)  # noqa: WPS432
+        margaret = Pizza.objects.create(title='Margaret', price=90)  # noqa: WPS432, E501
         margaret.ingredients.set([2])
 
-
-
     def test_ingredient_title(self):
-        """ Test module for Ingredients model."""
+        """Test module for Ingredients model."""
         ingredient_dough = Ingredient.objects.get(title='Dough')
         ingredient_garlic = Ingredient.objects.get(title='Garlic')
         self.assertEqual(  # noqa: T003
@@ -37,12 +37,12 @@ class IngredientTest(TestCase):
         )
 
     def test_pizza(self):
-        """ Test module for Pizza model."""
+        """Test module for Pizza model."""
         pizza_royal = Pizza.objects.get(title='Royal common')
         pizza_margaret = Pizza.objects.get(title='Margaret')
         self.assertEqual(  # noqa: T003
-            pizza_royal.for_tests(), 'Royal common 200'
+            pizza_royal.for_tests(), 'Royal common 200',
         )
         self.assertEqual(  # noqa: T003
-            pizza_margaret.for_tests(), 'Margaret 90'
+            pizza_margaret.for_tests(), 'Margaret 90',
         )
