@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Django settings for pizza project.
 
@@ -22,7 +24,7 @@ BASE_DIR = os.path.dirname(dirname)
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0sxle6dm-a0sl=xe8kd6yh^7_=!)km7l811%5z(^+i1c_cg#tg'
+SECRET_KEY = '0sxle6dm-a0sl=xe8kd6yh^7_=!)km7l811%5z(^+i1c_cg#tg'  # noqa: S105
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,6 +89,7 @@ DATABASES = {  # noqa: WPS407
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+P_VALIDATION = 'django.contrib.auth.password_validation'
 
 AUTH_PASSWORD_VALIDATORS = [  # noqa: WPS407
     {
