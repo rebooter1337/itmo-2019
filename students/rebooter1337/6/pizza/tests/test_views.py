@@ -21,7 +21,7 @@ class PostTest(TestCase):
         )
         royal.ingredients.set([1])
 
-        margaret = Pizza.objects.create(title='Margaret', price=90)  # noqa: WPS432
+        margaret = Pizza.objects.create(title='Margaret', price=90)  # noqa: WPS432, E501
         margaret.ingredients.set([2])
 
     def test_stats(self):
@@ -35,7 +35,7 @@ class PostTest(TestCase):
         response = self.client.post(path='/api/order/', datas1=datas)
         assert response.status_code == 200  # noqa: WPS432
 
-        
+
 class TestGetPizzas(TestCase):
     """Testing Views getting API Pizza class."""
 
@@ -52,7 +52,7 @@ class TestGetPizzas(TestCase):
         )
         royal.ingredients.set([1])
 
-        margaret = Pizza.objects.create(title='Margaret', price=90  #noqa: WPS432
+        margaret = Pizza.objects.create(title='Margaret', price=90  #noqa: WPS432, E501
         margaret.ingredients.set([2])
 
     def test_get(self):
@@ -77,7 +77,7 @@ class TestStatistics(TestCase):
         )
         royal.ingredients.set([1])
 
-        margaret = Pizza.objects.create(title='Margaret', price=90)  #noqa: WPS432
+        margaret = Pizza.objects.create(title='Margaret', price=90)  #noqa: WPS432, E501
         margaret.ingredients.set([2])
         datas = {
             'pizzas': [1],
