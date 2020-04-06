@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-  #noqa: E902
 
 from django.test import TestCase
 
@@ -52,7 +52,7 @@ class TestGetPizzas(TestCase):
         )
         royal.ingredients.set([1])
 
-        margaret = Pizza.objects.create(title='Margaret', price=90  #noqa: WPS432, E501
+        margaret = Pizza.objects.create(title='Margaret', price=90  # noqa: WPS432, E501
         margaret.ingredients.set([2])
 
     def test_get(self):
@@ -77,7 +77,7 @@ class TestStatistics(TestCase):
         )
         royal.ingredients.set([1])
 
-        margaret = Pizza.objects.create(title='Margaret', price=90)  #noqa: WPS432, E501
+        margaret = Pizza.objects.create(title='Margaret', price=90)  # noqa: WPS432, E501
         margaret.ingredients.set([2])
         datas = {
             'pizzas': [1],
