@@ -18,7 +18,7 @@ class IngredientTest(TestCase):
         )
 
         royal = Pizza.objects.create(
-            title='Royal common', price=200
+            title='Royal common', price=200,  # noqa: WPS432
         )  # noqa: WPS432
         royal.ingredients.set([1])
 
@@ -30,10 +30,10 @@ class IngredientTest(TestCase):
         ingredient_dough = Ingredient.objects.get(title='Dough')
         ingredient_garlic = Ingredient.objects.get(title='Garlic')
         self.assertEqual(  # noqa: T003
-            ingredient_dough.__str__(), 'Dough'
+            ingredient_dough.__str__(), 'Dough',  # noqa: WPS609
         )
         self.assertEqual(  # noqa: T003
-            ingredient_garlic.__str__(), 'Garlic'
+            ingredient_garlic.__str__(), 'Garlic',  # noqa: WPS609
         )
 
     def test_pizza(self):
