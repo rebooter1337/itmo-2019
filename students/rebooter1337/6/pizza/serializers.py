@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from rest_framework.serializers import ModelSerializer
-
 from pizza.models import Ingredient, Order, Pizza
+from rest_framework.serializers import ModelSerializer
 
 
 class IngredientSerializer(ModelSerializer):
