@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-  #noqa: E902
+# -*- coding: utf-8 -*-  # noqa: E902
 
 from django.test import TestCase
 
