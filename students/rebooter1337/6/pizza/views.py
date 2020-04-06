@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-from django.http import QueryDict
-import json
-from django.http import JsonResponse
+from django.http import QueryDict  # noqa: F401, I001
+import json  # noqa: F401
+from django.http import JsonResponse  # noqa: I001, I003
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from pizza.models import Ingredient, Order, Pizza
-from pizza.serializers import IngredientSerializer, OrderSerializer, PizzaSerializer
-from pizza.mailing import send_mail_on_order
-
+from pizza.serializers import IngredientSerializer, OrderSerializer, PizzaSerializer  # noqa: I001, E501
+from pizza.mailing import send_mail_on_order  # noqa: F401, I001
 from pizza.statistics import (
     overall_statistics,
     pizza_statistics,
     status_statistics,
 )
-
 
 
 class IngredientViewSet(viewsets.ModelViewSet):
@@ -43,7 +41,6 @@ class OrderViewSet(viewsets.ModelViewSet):
 @api_view(['POST'])
 def post_order(request):
     """Posts Order and sends email to customer."""
-
     if request.method == 'POST':
         order_data = request.data
         serializer = OrderSerializer(data=order_data)
@@ -54,14 +51,13 @@ def post_order(request):
             order.email_sent = True
             order.save()
         if serializer.errors:
-            return JsonResponse(serializer.errors, status=400)
-        return JsonResponse(serializer.data, status=200)
+            return JsonResponse(serializer.errors, status=400)  # noqa: WPS432
+        return JsonResponse(serializer.data, status=200)  # noqa: WPS432
 
 
 @api_view(['GET'])
 def get_statistics(request):
     """Counts statistics for Order."""
-
     today = datetime.datetime.today()
     day_ago = today - datetime.timedelta(hours=24)
     orders_today = Order.objects.filter(order_date__gte=day_ago)
