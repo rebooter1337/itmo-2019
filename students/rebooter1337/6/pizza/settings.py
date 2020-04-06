@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+NAME = 'NAME'
+dirname = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(dirname)
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,12 +27,12 @@ SECRET_KEY = '0sxle6dm-a0sl=xe8kd6yh^7_=!)km7l811%5z(^+i1c_cg#tg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []  # noqa: WPS407
 
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [  # noqa: WPS407
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'pizza'
+    'pizza',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE = [  # noqa: WPS407
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,7 +55,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pizza.urls'
 
-TEMPLATES = [
+TEMPLATES = [  # noqa: WPS407
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
@@ -75,7 +77,7 @@ WSGI_APPLICATION = 'pizza.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = {  # noqa: WPS407
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -86,18 +88,22 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
+AUTH_PASSWORD_VALIDATORS = [  # noqa: WPS407
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        NAME:
+            '{0}.UserAttributeSimilarityValidator'.format(P_VALIDATION),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        NAME:
+            '{0}.MinimumLengthValidator'.format(P_VALIDATION),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        NAME:
+            '{0}.CommonPasswordValidator'.format(P_VALIDATION),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        NAME:
+            '{0}.NumericPasswordValidator'.format(P_VALIDATION),
     },
 ]
 
