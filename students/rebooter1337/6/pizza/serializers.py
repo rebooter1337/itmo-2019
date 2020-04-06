@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from pizza.models import Ingredient, Order, Pizza
-
 from rest_framework.serializers import ModelSerializer  # noqa: I001
+
+from pizza.models import Ingredient, Order, Pizza
 
 
 class IngredientSerializer(ModelSerializer):
