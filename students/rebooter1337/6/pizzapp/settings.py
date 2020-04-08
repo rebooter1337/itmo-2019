@@ -56,7 +56,7 @@ MIDDLEWARE = [  # noqa: WPS407
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pizza.urls'
+ROOT_URLCONF = 'pizzapp.urls'
 
 TEMPLATES = [  # noqa: WPS407
     {
@@ -74,7 +74,7 @@ TEMPLATES = [  # noqa: WPS407
     },
 ]
 
-WSGI_APPLICATION = 'pizza.wsgi.application'
+WSGI_APPLICATION = 'pizzapp.wsgi.application'
 
 
 # Database
