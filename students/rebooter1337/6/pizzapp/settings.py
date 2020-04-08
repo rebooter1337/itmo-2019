@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['testserver']  # noqa: WPS407
 # Application definition
 
 INSTALLED_APPS = [  # noqa: WPS407
+    'pizzapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
