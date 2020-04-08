@@ -43,6 +43,7 @@ INSTALLED_APPS = [  # noqa: WPS407
     'django.contrib.staticfiles',
     'rest_framework',
     'pizzapp',
+    'pizza',
 ]
 
 MIDDLEWARE = [  # noqa: WPS407
