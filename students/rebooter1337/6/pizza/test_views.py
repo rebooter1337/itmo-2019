@@ -2,7 +2,7 @@
 
 from django.test import TestCase
 
-from models import Ingredient, Pizza
+from pizza.models import Ingredient, Pizza
 
 
 class PostTest(TestCase):
