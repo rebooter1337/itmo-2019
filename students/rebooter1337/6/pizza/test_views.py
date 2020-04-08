@@ -94,7 +94,7 @@ class TestStatistics(TestCase):
         response = self.client.get('/api/statistics/pizza')
         assert response.status_code == 200  # noqa: WPS432
         assert response.json() == {
-            'all': 1,
-            'pizzas': {'1': 1},
-            'statuses': {'ACCEPTED': 1, 'COOKING': 0, 'DELIVERY': 0, 'FINISHED': 0},  # noqa: E501
+            'all': 5,
+            'pizzas': {'4': 2, '5': 3},
+            'statuses': {'ACCEPTED': 3, 'COOKING': 2, 'DELIVERY': 0, 'FINISHED': 0},  # noqa: E501
         }
