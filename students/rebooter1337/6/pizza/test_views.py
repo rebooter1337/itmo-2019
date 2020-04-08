@@ -34,12 +34,12 @@ class PostTest(TestCase):
 
         response = self.client.post(path='/api/order/', datas1=datas)
         assert response.status_code == 400  # noqa: WPS432
-        
+
     def test_get(self):
         """Testing Views getting API Pizza."""
         response = self.client.get(path='/api/pizza/')
         assert response.status_code == 200  # noqa: WPS432
-        
+
     def test_loading(self):
         """Tests for load."""
         response = self.client.get('/api/statistics/pizza')
