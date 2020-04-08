@@ -2,7 +2,7 @@
 
 from django.core.mail import send_mail
 
-from pizza.settings import EMAIL_HOST_USER
+from pizzapp.settings import EMAIL_HOST_USER
 
 
 def send_mail_on_order(delivery_time: int, customer_email: str, customer_address: str) -> None:  # noqa: E501
